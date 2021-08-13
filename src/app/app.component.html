@@ -1,0 +1,29 @@
+<hello name="{{ name }}"></hello>
+<p>
+  Start editing to see some magic happen :)
+</p>
+<div class="container-fluid " style="height: 500px;">
+  <div class="row">
+    <div class="col-md-12 footer" style="height: 50px;">
+      <app-header></app-header>
+    </div>
+  </div>
+  <div class="row" style="height: 400px;">
+    <div class="col-md-2" style="padding-left:0px;">
+      <div class="sidebar" style="height:400px;padding-left:20px">
+        <app-sidebar></app-sidebar>
+      </div>
+    </div>
+    <div class="col-md-10 no-padding">
+      <div class="content" style="height:400px;padding-left:20px;">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </div>
+
+  <div class="row" style="height: 50px;">
+    <div class="col-md-12 footer">
+      <app-footer></app-footer>
+    </div>
+  </div>
+</div>
