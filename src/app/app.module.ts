@@ -8,10 +8,10 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { ContentComponent } from './content/content.component';
-import { AppRouterModule } from './app-router/app-router.module';
+import { ApprouterModule } from './approuter/approuter.module';
 
 @NgModule({
-  imports: [BrowserModule, FormsModule, AppRouterModule],
+  imports: [BrowserModule, FormsModule, ApprouterModule],
   declarations: [
     AppComponent,
     HelloComponent,
