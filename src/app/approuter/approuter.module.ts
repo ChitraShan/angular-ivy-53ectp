@@ -13,10 +13,6 @@ const routes: Routes = [
   {
     path: 'home',
     component: HomeComponent
-  },
-  {
-    path: 'sample1',
-    component: Sample1Component
   }
 ];
 
