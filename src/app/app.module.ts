@@ -8,12 +8,9 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { ContentComponent } from './content/content.component';
-import { ApprouterModule } from './approuter/approuter.module';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
-import { Sample1Component } from './home/sample1/sample1.component';
-import { HomeRouterModuleModule } from './home/home-router-module/home-router-module.module';
 
 const routes: Routes = [
   {
@@ -22,16 +19,17 @@ const routes: Routes = [
   },
   {
     path: 'home',
-    component: HomeComponent
-  }
+    loadChildren: () => import(`./home/home.module`).then(m => m.HomeModule)
+  },
+  { path: '', redirectTo: 'login', pathMatch: 'full' },
+  { path: '**', redirectTo: 'login' }
 ];
 
 @NgModule({
   imports: [
     BrowserModule,
     FormsModule,
-    ApprouterModule,
-    HomeRouterModuleModule
+    RouterModule.forRoot(routes, { enableTracing: false })
   ],
   declarations: [
     AppComponent,
@@ -39,7 +37,9 @@ const routes: Routes = [
     HeaderComponent,
     FooterComponent,
     SidebarComponent,
-    ContentComponent
+    ContentComponent,
+    LoginComponent,
+    HomeComponent
   ],
   bootstrap: [AppComponent]
 })
